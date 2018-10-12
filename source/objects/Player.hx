@@ -2,6 +2,7 @@ package objects;
 
 import flixel.FlxSprite;
 import flixel.util.FlxColor;
+import flixel.FlxG;
 
 class Player extends FlxSprite
 {
@@ -13,5 +14,11 @@ class Player extends FlxSprite
         super(x, y);
         makeGraphic(playerWidth, playerHeight, FlxColor.BLUE);
 
+    }
+
+    override public function update(elapsed:Float):Void 
+    {
+
+        super.update(elapsed);
     }
 }

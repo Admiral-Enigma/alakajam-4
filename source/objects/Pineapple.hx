@@ -28,6 +28,7 @@ class Pineapple extends FlxSprite
         } else 
         {
             launchAngle = 45 * 3;
+            x = 410;
         }
         velocity.set(LAUNCH_SPEED, 0);
         velocity.rotate(FlxPoint.weak(0, 0), launchAngle);

@@ -5,6 +5,7 @@ import objects.Player;
 import objects.Pineapple;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxG;
+import flixel.FlxSprite;
 
 class PlayState extends FlxState
 {
@@ -28,10 +29,17 @@ class PlayState extends FlxState
 	override public function update(elapsed:Float):Void
 	{
 		super.update(elapsed);
+		FlxG.collide(pineapples, player.playerAttackBox, pineappleHit);
 		if (FlxG.keys.justPressed.A) {
-			pineapples.add(new Pineapple(32, 1));
+			pineapples.add(new Pineapple(128, 1));
 		} else if (FlxG.keys.justPressed.D) {
-			pineapples.add(new Pineapple(32, -1));
+			pineapples.add(new Pineapple(128, -1));
 		}
+	}
+
+	function pineappleHit (pine:FlxSprite, _)
+	{
+		pine.kill();
+		//TODO: Up score and so on
 	}
 }

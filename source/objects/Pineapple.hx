@@ -11,7 +11,7 @@ class Pineapple extends FlxSprite
 
     // Constants in haxe is still a joke
     private static inline var GRAVITY:Int = 400;
-    private static inline var LAUNCH_SPEED:Int = 200;
+    private static inline var LAUNCH_SPEED:Int = 400;
     
     // dir can be 1 or -1 depending on which side you want to launch from
     public function new (y:Float, dir:Float)
@@ -28,7 +28,7 @@ class Pineapple extends FlxSprite
         } else 
         {
             launchAngle = 45 * 3;
-            x = 410;
+            x = 410 - 32;
         }
         velocity.set(LAUNCH_SPEED, 0);
         velocity.rotate(FlxPoint.weak(0, 0), launchAngle);
